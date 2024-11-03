@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Base Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .converter-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #convertButton {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #resetButton,
+        #swapButton {
+            background-color: #ffc107;
+            color: white;
+            flex: 1;
+            margin: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter-container">
+        <h1>Base Converter</h1>
+
+        <div class="input-group">
+            <label for="number">Enter Number</label>
+            <input type="text" id="number" placeholder="Enter number" />
+        </div>
+
+        <div class="input-group">
+            <label for="fromBase">From Base</label>
+            <select id="fromBase">
+                <option value="2">2 (Binary)</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8 (Octal)</option>
+                <option value="9">9</option>
+                <option value="10" selected>10 (Decimal)</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16" selected>16 (Hexadecimal)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="toBase">To Base</label>
+            <select id="toBase">
+                <option value="2">2 (Binary)</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8 (Octal)</option>
+                <option value="9">9</option>
+                <option value="10">10 (Decimal)</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16 (Hexadecimal)</option>
+            </select>
+        </div>
+
+        <button id="convertButton">Convert</button>
+
+        <div class="buttons">
+            <button id="resetButton">Reset</button>
+            <button id="swapButton">Swap</button>
+        </div>
+
+        <div class="result" id="resultNumber"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
